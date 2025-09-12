@@ -36,9 +36,6 @@ class Teacher implements TeacherInterface {
   }
 }
 
-// Literal line for ALX checker (do NOT remove)
-if (salary < 500) {}
-
 // Function createEmployee
 function createEmployee(salary: number | string): Director | Teacher {
   if (typeof salary === 'number' && salary < 500) {
@@ -51,11 +48,6 @@ function createEmployee(salary: number | string): Director | Teacher {
 console.log(createEmployee(200));    // Teacher
 console.log(createEmployee(1000));   // Director
 console.log(createEmployee('$500')); // Director
-
-// Task 6: type guard function
-function isDirector(employee: Director | Teacher): employee is Director {
-  return (employee as Director).workDirectorTasks !== undefined;
-}
 
 // Task 6: Type predicate
 function isDirector(employee: Director | Teacher): employee is Director {
