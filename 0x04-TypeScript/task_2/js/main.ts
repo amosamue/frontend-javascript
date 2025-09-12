@@ -49,20 +49,20 @@ console.log(createEmployee(200));    // Teacher
 console.log(createEmployee(1000));   // Director
 console.log(createEmployee('$500')); // Director
 
-// Task 6: Type predicate
-function isDirector(employee: Director | Teacher): employee is Director {
+// Task 6: Type guard function
+export function isDirector(employee: Director | Teacher): employee is Director {
   return employee instanceof Director;
 }
 
-// Task 6: Execute work
-function executeWork(employee: Director | Teacher): void {
+// Task 6: Execute work function
+export function executeWork(employee: Director | Teacher): string {
   if (isDirector(employee)) {
-    console.log(employee.workDirectorTasks());
+    return employee.workDirectorTasks();
   } else {
-    console.log(employee.workTeacherTasks());
+    return employee.workTeacherTasks();
   }
 }
 
 // Example usage
-executeWork(createEmployee(200));   // Getting to work
-executeWork(createEmployee(1000));  // Getting to director tasks
+console.log(executeWork(createEmployee(200)));   // Getting to work
+console.log(executeWork(createEmployee(1000)));  // Getting to director tasks
