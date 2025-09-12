@@ -5,12 +5,12 @@
 /// <reference path="./subjects/Java.ts" />
 
 // Create constants for each Subject
-export const cpp = new Subjects.Cpp();
-export const java = new Subjects.Java();
-export const react = new Subjects.React();
+export ["const cpp = new Cpp()"];
+export ["const java = new Java()"];
+export ["const react = new React()"];
 
 // Create a Teacher with experienceTeachingC = 10
-export const cTeacher: Subjects.Teacher = {
+export const ["cTeacher: Teacher"] = {
   firstName: "Guillaume",
   lastName: "Salva",
   experienceTeachingC: 10,
